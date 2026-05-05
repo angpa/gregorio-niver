@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/* =============================================
+   MÖ BIRTHDAY - DESIGN TOKENS
+   ============================================= */
+:root {
+  --color-metal-black: #000000;
+  --color-metal-silver: #a5a9b4;
+  --color-metal-red: #cc0000;
+  --color-electric-blue: #00f2ff;
+  --color-deep-black: #000000;
+  
+  --font-metal: "Metal Mania", system-ui, sans-serif;
+  --font-nosifer: "Nosifer", cursive;
+  --font-ui: "Inter", system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--color-metal-black);
+  --color-foreground: #ffffff;
+}
+
+/* =============================================
+   BASE STYLES
+   ============================================= */
+body {
+  background: var(--color-metal-black);
+  color: #ffffff;
+  font-family: var(--font-ui);
+  overflow-x: hidden;
+}
+
+/* =============================================
+   FONT UTILITIES
+   ============================================= */
+.font-metal {
+  font-family: var(--font-metal);
+}
+
+.font-nosifer {
+  font-family: var(--font-nosifer);
+}
+
+/* =============================================
+   METAL GLOW PULSE
+   ============================================= */
+@keyframes metal-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
+  }
+}
+
+.animate-metal-pulse {
+  animation: metal-pulse 2s ease-in-out infinite;
+}
+
+/* =============================================
+   SCROLLBAR
+   ============================================= */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+/* =============================================
+   SELECTION
+   ============================================= */
+::selection {
+  background: var(--color-metal-red);
+  color: white;
+}

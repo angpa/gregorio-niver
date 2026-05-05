@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Playfair Display", serif;
+  --font-display: "Cinzel", serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+body {
+  background-color: #0d0404;
+  color: #d4af37;
+  overflow: hidden;
+}
+
+.atmosphere {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 50% 50%, #2b0a0a 0%, transparent 70%),
+    radial-gradient(circle at 20% 80%, #1a0505 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, #bf9b3022 0%, transparent 40%);
+  z-index: 0;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.glass-panel {
+  background: rgba(43, 10, 10, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.glow-text {
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.pulse-core {
+  background: radial-gradient(circle, #d4af3711 0%, transparent 70%);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 50px rgba(74, 14, 14, 0.5);
+}
+
+.tibetan-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20 L40 0 L40 40 Z' fill='%23d4af37' fill-opacity='0.03'/%3E%3C/svg%3E");
+}
+
+.node-label {
+  font-family: var(--font-display);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #bf9b30;
+  font-weight: 700;
+}
+
+@keyframes slow-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.group:hover .group-hover\:bounce {
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+.floating-element {
+  animation: slow-float 6s ease-in-out infinite;
+}

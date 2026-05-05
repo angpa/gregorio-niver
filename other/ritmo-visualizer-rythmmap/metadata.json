@@ -1,0 +1,6 @@
+{
+  "name": "Ritmo Visualizer",
+  "description": "Analyze and visualize the rhythm of your music in real-time.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["audio-analysis", "real-time-visualization"]
+}
